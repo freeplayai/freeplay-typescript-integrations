@@ -106,7 +106,7 @@ importers:
         version: 2.0.53(zod@3.25.76)
       '@ai-sdk/react':
         specifier: ^2.0.44
-        version: 2.0.76(react@19.2.0)(zod@3.25.76)
+        version: 2.0.76(react@19.2.4)(zod@3.25.76)
       '@arizeai/openinference-vercel':
         specifier: ^2.3.4
         version: 2.3.4(@opentelemetry/api@1.9.0)
@@ -136,13 +136,13 @@ importers:
         version: 0.5.1(zod@3.25.76)
       next:
         specifier: ^15.5.14
-        version: 15.5.14(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 15.5.14(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react:
-        specifier: ^19.0.0
-        version: 19.2.0
+        specifier: ^19.2.1
+        version: 19.2.4
       react-dom:
-        specifier: ^19.0.0
-        version: 19.2.0(react@19.2.0)
+        specifier: ^19.2.1
+        version: 19.2.4(react@19.2.4)
       zod:
         specifier: ^3.25.76
         version: 3.25.76
@@ -2585,10 +2585,10 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
-  react-dom@19.2.0:
-    resolution: {integrity: sha512-UlbRu4cAiGaIewkPyiRGJk0imDN2T3JjieT6spoL2UeSf5od4n5LB/mQ4ejmxhCFT1tYe8IvaFulzynWovsEFQ==}
+  react-dom@19.2.4:
+    resolution: {integrity: sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ==}
     peerDependencies:
-      react: ^19.2.0
+      react: ^19.2.4
 
   react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
@@ -2598,8 +2598,8 @@ packages:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
-  react@19.2.0:
-    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}
+  react@19.2.4:
+    resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -3092,12 +3092,12 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@2.0.76(react@19.2.0)(zod@3.25.76)':
+  '@ai-sdk/react@2.0.76(react@19.2.4)(zod@3.25.76)':
     dependencies:
       '@ai-sdk/provider-utils': 3.0.12(zod@3.25.76)
       ai: 5.0.76(zod@3.25.76)
-      react: 19.2.0
-      swr: 2.3.6(react@19.2.0)
+      react: 19.2.4
+      swr: 2.3.6(react@19.2.4)
       throttleit: 2.1.0
     optionalDependencies:
       zod: 3.25.76
@@ -5179,15 +5179,15 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  next@15.5.14(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  next@15.5.14(@opentelemetry/api@1.9.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       '@next/env': 15.5.14
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001780
       postcss: 8.4.31
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
-      styled-jsx: 5.1.6(react@19.2.0)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      styled-jsx: 5.1.6(react@19.2.4)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.5.14
       '@next/swc-darwin-x64': 15.5.14
@@ -5405,9 +5405,9 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-dom@19.2.0(react@19.2.0):
+  react-dom@19.2.4(react@19.2.4):
     dependencies:
-      react: 19.2.0
+      react: 19.2.4
       scheduler: 0.27.0
 
   react-refresh@0.17.0: {}
@@ -5416,7 +5416,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  react@19.2.0: {}
+  react@19.2.4: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -5669,10 +5669,10 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  styled-jsx@5.1.6(react@19.2.0):
+  styled-jsx@5.1.6(react@19.2.4):
     dependencies:
       client-only: 0.0.1
-      react: 19.2.0
+      react: 19.2.4
 
   sucrase@3.35.0:
     dependencies:
@@ -5690,11 +5690,11 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  swr@2.3.6(react@19.2.0):
+  swr@2.3.6(react@19.2.4):
     dependencies:
       dequal: 2.0.3
-      react: 19.2.0
-      use-sync-external-store: 1.6.0(react@19.2.0)
+      react: 19.2.4
+      use-sync-external-store: 1.6.0(react@19.2.4)
 
   tailwindcss@3.4.18(tsx@4.20.6):
     dependencies:
@@ -5846,9 +5846,9 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-sync-external-store@1.6.0(react@19.2.0):
+  use-sync-external-store@1.6.0(react@19.2.4):
     dependencies:
-      react: 19.2.0
+      react: 19.2.4
 
   util-deprecate@1.0.2: {}
 

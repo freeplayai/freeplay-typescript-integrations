@@ -1,0 +1,22 @@
+fail-on-severity: high
+
+# Allow licenses approved by legal for our commercial SaaS use case (server-side deployment).
+# This is an allowlist approach (replacing the deprecated deny-licenses option).
+# Note: MPL-2.0 is weak copyleft and may require distribution obligations if code is shipped to users;
+# it is permitted here assuming server-side use only and subject to legal review for any client-side distribution.
+# See: https://github.com/actions/dependency-review-action/issues/997
+allow-licenses:
+  - MIT
+  - Apache-2.0
+  - BSD-2-Clause
+  - BSD-3-Clause
+  - ISC
+  - 0BSD
+  - Unlicense
+  - CC0-1.0
+  - Zlib
+  - PSF-2.0
+  - Python-2.0
+  - BlueOak-1.0.0
+  - BSL-1.0
+  - MPL-2.0

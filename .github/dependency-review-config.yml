@@ -15,4 +15,7 @@ allow-licenses:
   - Python-2.0
   - BlueOak-1.0.0
   - BSL-1.0
+  # MPL-2.0 is allowed for lightningcss (a transitive dependency of vite).
+  # We do not directly use lightningcss in this project.
+  - MPL-2.0
 

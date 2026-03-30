@@ -102,7 +102,7 @@
     "@types/node": "^24.9.1",
     "@vercel/otel": "^2.1.1",
     "ai": "^5.0.77",
-    "freeplay": "^0.5.1",
+    "freeplay": "^0.6.3",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }

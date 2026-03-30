@@ -20,7 +20,7 @@
     "@opentelemetry/sdk-trace-base": "^2.6.1",
     "@vercel/otel": "^2.1.1",
     "ai": "^5.0.77",
-    "freeplay": "^0.5.1",
+    "freeplay": "^0.6.3",
     "@freeplayai/vercel": "^0.1.2",
     "next": "^15.5.14",
     "react": "^19.2.4",

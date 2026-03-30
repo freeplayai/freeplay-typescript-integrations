@@ -8,6 +8,8 @@ on:
       - "packages/vercel/**"
       - "!packages/vercel/examples/**"
 
+permissions: {}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -15,6 +17,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
+      attestations: write # Needed for build provenance
 
     steps:
       - name: Checkout code
@@ -36,7 +39,10 @@ jobs:
       - name: Build package
         run: pnpm --filter @freeplayai/vercel build
 
+      - name: Generate build provenance attestation
+        uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+        with:
+          subject-path: packages/vercel/dist/*
+
       - name: Publish to npm
         run: pnpm --filter @freeplayai/vercel publish --access public --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -13,7 +13,7 @@
     "@ai-sdk/google": "^2.0.23",
     "@ai-sdk/google-vertex": "^3.0.53",
     "@ai-sdk/openai": "^2.0.53",
-    "@modelcontextprotocol/sdk": "^1.28.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "@opentelemetry/sdk-node": "^0.214.0",
     "ai": "^5.0.77",
     "cors": "^2.8.6",

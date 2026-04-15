@@ -17,7 +17,7 @@
     "@opentelemetry/sdk-node": "^0.214.0",
     "ai": "^5.0.77",
     "cors": "^2.8.6",
-    "dotenv": "^17.4.0",
+    "dotenv": "^17.4.2",
     "express": "^4.21.2",
     "freeplay": "^0.6.3",
     "@freeplayai/vercel": "^0.1.2",

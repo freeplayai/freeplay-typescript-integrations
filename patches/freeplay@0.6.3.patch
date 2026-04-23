@@ -1,0 +1,110 @@
+diff --git a/dist/cjs/resources/recordings.js b/dist/cjs/resources/recordings.js
+index 8a656bb287ffb346e5a6f839f6c28d61f0930dc8..a9fa25cea252df8f81c907ed5dc3933926700d01 100644
+--- a/dist/cjs/resources/recordings.js
++++ b/dist/cjs/resources/recordings.js
+@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.Recordings = void 0;
+-const uuid_1 = require("uuid");
++const crypto_1 = require("node:crypto");
+ class Recordings {
+     constructor(callSupport) {
+         this.callSupport = callSupport;
+@@ -22,7 +22,7 @@ class Recordings {
+             }
+             // Apply default sessionInfo if not provided
+             const recordDataWithDefaults = Object.assign(Object.assign({}, recordData), { sessionInfo: recordData.sessionInfo || {
+-                    sessionId: (0, uuid_1.v4)(),
++                    sessionId: (0, crypto_1.randomUUID)(),
+                     customMetadata: undefined,
+                 } });
+             const completionId = yield this.callSupport.recordCall(recordDataWithDefaults);
+diff --git a/dist/cjs/support.js b/dist/cjs/support.js
+index 1e8b6593f932cadc5d8fbae4e2b7fa10017a3afc..9878e1f390c9b8c03f0f8f4af115082f3276cc41 100644
+--- a/dist/cjs/support.js
++++ b/dist/cjs/support.js
+@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.CallSupport = void 0;
+ const axios_1 = require("axios");
+ const Mustache = require("mustache");
+-const uuid_1 = require("uuid");
++const crypto_1 = require("node:crypto");
+ const errors_js_1 = require("./errors.js");
+ const utils_js_1 = require("./utils.js");
+ class CallSupport {
+@@ -46,7 +46,7 @@ class CallSupport {
+         return false;
+     }
+     createSessionId() {
+-        return String((0, uuid_1.v4)());
++        return (0, crypto_1.randomUUID)();
+     }
+     createPromptVersion(projectId, promptTemplateName, templateMessages, model, provider, versionName, versionDescription, llmParameters, toolSchema, environments) {
+         return __awaiter(this, void 0, void 0, function* () {
+diff --git a/dist/esm/resources/recordings.js b/dist/esm/resources/recordings.js
+index b60a8f0d61053e5776603921f35f94c0044e9d1d..873b84f079976aa4cd4f089e4bd7e7ab6b2f758a 100644
+--- a/dist/esm/resources/recordings.js
++++ b/dist/esm/resources/recordings.js
+@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+         step((generator = generator.apply(thisArg, _arguments || [])).next());
+     });
+ };
+-import { v4 as uuidv4 } from "uuid";
++import { randomUUID } from "node:crypto";
+ export class Recordings {
+     constructor(callSupport) {
+         this.callSupport = callSupport;
+@@ -19,7 +19,7 @@ export class Recordings {
+             }
+             // Apply default sessionInfo if not provided
+             const recordDataWithDefaults = Object.assign(Object.assign({}, recordData), { sessionInfo: recordData.sessionInfo || {
+-                    sessionId: uuidv4(),
++                    sessionId: randomUUID(),
+                     customMetadata: undefined,
+                 } });
+             const completionId = yield this.callSupport.recordCall(recordDataWithDefaults);
+diff --git a/dist/esm/support.js b/dist/esm/support.js
+index 182d698e8c5a31ba5de513f5f570d8d5baeaf41f..2eb990848bd65695b320088a61ae431c782cbc66 100644
+--- a/dist/esm/support.js
++++ b/dist/esm/support.js
+@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
+ };
+ import axios from "axios";
+ import * as Mustache from "mustache";
+-import { v4 as uuidv4 } from "uuid";
++import { randomUUID } from "node:crypto";
+ import { FreeplayClientError, freeplayError } from "./errors.js";
+ import { getUserAgent } from "./utils.js";
+ export class CallSupport {
+@@ -43,7 +43,7 @@ export class CallSupport {
+         return false;
+     }
+     createSessionId() {
+-        return String(uuidv4());
++        return randomUUID();
+     }
+     createPromptVersion(projectId, promptTemplateName, templateMessages, model, provider, versionName, versionDescription, llmParameters, toolSchema, environments) {
+         return __awaiter(this, void 0, void 0, function* () {
+diff --git a/package.json b/package.json
+index d702d257e4d359d1bd650ede5470da04bde96bcf..9be029bdc27269bf6e047b157d4bb7e9628be87f 100644
+--- a/package.json
++++ b/package.json
+@@ -40,7 +40,6 @@
+     "@types/jest": "^29.5.2",
+     "@types/mustache": "^4.1.0",
+     "@types/node": "^20.3.2",
+-    "@types/uuid": "^9.0.2",
+     "axios-mock-adapter": "^1.21.5",
+     "eslint": "^9.16.0",
+     "eslint-config-prettier": "^9.1.0",
+@@ -62,8 +61,7 @@
+     "dotenv": "16.6.1",
+     "encoding": "^0.1.13",
+     "mustache": "^4.1.0",
+-    "openai": "^4.83.0",
+-    "uuid": "^9.0.0"
++    "openai": "^4.83.0"
+   },
+   "scripts": {
+     "safe-install": "npm ci && npm run allow-scripts:run",

@@ -27,6 +27,16 @@ overrides:
   hono: '>=4.12.14'
   '@hono/node-server': '>=1.19.14'
   protobufjs: '>=7.5.5'
+  freeplay@0.6.3>uuid: '-'
+  gaxios@6.7.1>uuid: '-'
+
+patchedDependencies:
+  freeplay@0.6.3:
+    hash: c5e8abf0a7792e11ee3da9c6b96855a4b95407d4abaa4e77302c31533758b7e1
+    path: patches/freeplay@0.6.3.patch
+  gaxios@6.7.1:
+    hash: c3252aeaf352f7d3d12c9a1e65adc7c321c052e340c292c98aa542dc52528f60
+    path: patches/gaxios@6.7.1.patch
 
 importers:
 
@@ -91,7 +101,7 @@ importers:
         version: 5.0.77(zod@3.25.76)
       freeplay:
         specifier: ^0.6.3
-        version: 0.6.3(zod@3.25.76)
+        version: 0.6.3(patch_hash=c5e8abf0a7792e11ee3da9c6b96855a4b95407d4abaa4e77302c31533758b7e1)(zod@3.25.76)
       tsup:
         specifier: ^8.5.1
         version: 8.5.1(jiti@1.21.7)(postcss@8.5.8)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)
@@ -142,7 +152,7 @@ importers:
         version: 5.0.77(zod@3.25.76)
       freeplay:
         specifier: ^0.6.3
-        version: 0.6.3(zod@3.25.76)
+        version: 0.6.3(patch_hash=c5e8abf0a7792e11ee3da9c6b96855a4b95407d4abaa4e77302c31533758b7e1)(zod@3.25.76)
       next:
         specifier: ^15.5.15
         version: 15.5.15(@opentelemetry/api@1.9.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -242,7 +252,7 @@ importers:
         version: 4.21.2
       freeplay:
         specifier: ^0.6.3
-        version: 0.6.3(zod@3.25.76)
+        version: 0.6.3(patch_hash=c5e8abf0a7792e11ee3da9c6b96855a4b95407d4abaa4e77302c31533758b7e1)(zod@3.25.76)
       zod:
         specifier: ^3.25.76
         version: 3.25.76
@@ -3520,10 +3530,6 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
-  uuid@9.0.1:
-    resolution: {integrity: sha512-b+1eJOlsR9K8HJpow9Ok3fiWOWSIcIzXodvv0rQjVoOVNpWMpxf1wZNpt4y9h10odCNrqnYp1OBzRktckBe3sA==}
-    hasBin: true
-
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -6198,7 +6204,7 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
-  freeplay@0.6.3(zod@3.25.76):
+  freeplay@0.6.3(patch_hash=c5e8abf0a7792e11ee3da9c6b96855a4b95407d4abaa4e77302c31533758b7e1)(zod@3.25.76):
     dependencies:
       '@anthropic-ai/sdk': 0.39.0(encoding@0.1.13)
       '@aws-sdk/client-bedrock-runtime': 3.1019.0
@@ -6207,7 +6213,6 @@ snapshots:
       encoding: 0.1.13
       mustache: 4.2.0
       openai: 4.104.0(encoding@0.1.13)(zod@3.25.76)
-      uuid: 9.0.1
     transitivePeerDependencies:
       - aws-crt
       - debug
@@ -6223,20 +6228,19 @@ snapshots:
 
   function-bind@1.1.2: {}
 
-  gaxios@6.7.1(encoding@0.1.13):
+  gaxios@6.7.1(patch_hash=c3252aeaf352f7d3d12c9a1e65adc7c321c052e340c292c98aa542dc52528f60)(encoding@0.1.13):
     dependencies:
       extend: 3.0.2
       https-proxy-agent: 7.0.6
       is-stream: 2.0.1
       node-fetch: 2.7.0(encoding@0.1.13)
-      uuid: 9.0.1
     transitivePeerDependencies:
       - encoding
       - supports-color
 
   gcp-metadata@6.1.1(encoding@0.1.13):
     dependencies:
-      gaxios: 6.7.1(encoding@0.1.13)
+      gaxios: 6.7.1(patch_hash=c3252aeaf352f7d3d12c9a1e65adc7c321c052e340c292c98aa542dc52528f60)(encoding@0.1.13)
       google-logging-utils: 0.0.2
       json-bigint: 1.0.0
     transitivePeerDependencies:
@@ -6292,7 +6296,7 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       ecdsa-sig-formatter: 1.0.11
-      gaxios: 6.7.1(encoding@0.1.13)
+      gaxios: 6.7.1(patch_hash=c3252aeaf352f7d3d12c9a1e65adc7c321c052e340c292c98aa542dc52528f60)(encoding@0.1.13)
       gcp-metadata: 6.1.1(encoding@0.1.13)
       gtoken: 7.1.0(encoding@0.1.13)
       jws: 4.0.1
@@ -6306,7 +6310,7 @@ snapshots:
 
   gtoken@7.1.0(encoding@0.1.13):
     dependencies:
-      gaxios: 6.7.1(encoding@0.1.13)
+      gaxios: 6.7.1(patch_hash=c3252aeaf352f7d3d12c9a1e65adc7c321c052e340c292c98aa542dc52528f60)(encoding@0.1.13)
       jws: 4.0.1
     transitivePeerDependencies:
       - encoding
@@ -7326,8 +7330,6 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   utils-merge@1.0.1: {}
-
-  uuid@9.0.1: {}
 
   vary@1.1.2: {}
 

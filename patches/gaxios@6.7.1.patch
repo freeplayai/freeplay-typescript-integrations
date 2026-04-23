@@ -1,0 +1,38 @@
+diff --git a/build/src/gaxios.js b/build/src/gaxios.js
+index b9fc1c0978857f2dcb954ce154049b74858e5dcd..fae0f82ac547bd518fb17368cbbd958ad841217e 100644
+--- a/build/src/gaxios.js
++++ b/build/src/gaxios.js
+@@ -60,7 +60,7 @@ const url_1 = require("url");
+ const common_1 = require("./common");
+ const retry_1 = require("./retry");
+ const stream_1 = require("stream");
+-const uuid_1 = require("uuid");
++const crypto_1 = require("node:crypto");
+ const interceptor_1 = require("./interceptor");
+ /* eslint-disable @typescript-eslint/no-explicit-any */
+ const fetch = hasFetch() ? window.fetch : node_fetch_1.default;
+@@ -411,10 +411,7 @@ async function _Gaxios_prepareRequest(options) {
+         }
+     }
+     else if (opts.multipart && opts.multipart.length > 0) {
+-        // note: once the minimum version reaches Node 16,
+-        // this can be replaced with randomUUID() function from crypto
+-        // and the dependency on UUID removed
+-        const boundary = (0, uuid_1.v4)();
++        const boundary = (0, crypto_1.randomUUID)();
+         opts.headers['Content-Type'] = `multipart/related; boundary=${boundary}`;
+         const bodyStream = new stream_1.PassThrough();
+         opts.body = bodyStream;
+diff --git a/package.json b/package.json
+index f47ade9a61aea8368c78f8ac5ced10091828717e..f47dc9ad09af7570f5f734326ee7e1f282c06688 100644
+--- a/package.json
++++ b/package.json
+@@ -90,7 +90,6 @@
+     "extend": "^3.0.2",
+     "https-proxy-agent": "^7.0.1",
+     "is-stream": "^2.0.0",
+-    "node-fetch": "^2.6.9",
+-    "uuid": "^9.0.1"
++    "node-fetch": "^2.6.9"
+   }
+ }

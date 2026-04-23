@@ -58,7 +58,13 @@
       "follow-redirects": ">=1.16.0",
       "hono": ">=4.12.14",
       "@hono/node-server": ">=1.19.14",
-      "protobufjs": ">=7.5.5"
+      "protobufjs": ">=7.5.5",
+      "freeplay@0.6.3>uuid": "-",
+      "gaxios@6.7.1>uuid": "-"
+    },
+    "patchedDependencies": {
+      "freeplay@0.6.3": "patches/freeplay@0.6.3.patch",
+      "gaxios@6.7.1": "patches/gaxios@6.7.1.patch"
     }
   }
 }

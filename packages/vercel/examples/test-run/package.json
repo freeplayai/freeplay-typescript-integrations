@@ -10,14 +10,14 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^2.0.37",
-    "@ai-sdk/google": "^2.0.23",
-    "@ai-sdk/google-vertex": "^3.0.53",
-    "@ai-sdk/openai": "^2.0.53",
+    "@ai-sdk/anthropic": "^3.0.71",
+    "@ai-sdk/google": "^3.0.64",
+    "@ai-sdk/google-vertex": "^4.0.112",
+    "@ai-sdk/openai": "^3.0.53",
     "@opentelemetry/sdk-node": "^0.207.0",
-    "ai": "^5.0.77",
+    "ai": "^6.0.168",
     "dotenv": "^16.6.1",
-    "freeplay": "^0.5.1",
+    "freeplay": "^0.7.4",
     "@freeplayai/vercel": "^0.1.2",
     "zod": "^3.25.76"
   },

@@ -1,10 +1,10 @@
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 import {
   convertToModelMessages,
-  experimental_createMCPClient,
   stepCountIs,
   streamText,
 } from "ai";
+import { createMCPClient } from "@ai-sdk/mcp";
 import { openai } from "@ai-sdk/openai";
 
 export async function POST(req: Request) {
@@ -12,7 +12,7 @@ export async function POST(req: Request) {
   const transport = new StreamableHTTPClientTransport(url);
 
   const [client, { messages, id }] = await Promise.all([
-    experimental_createMCPClient({
+    createMCPClient({
       transport,
     }),
     req.json(),
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       tools,
       stopWhen: stepCountIs(5),
       system: "You are a helpful assistant.",
-      messages: convertToModelMessages(messages),
+      messages: await convertToModelMessages(messages),
       onFinish: async () => {
         await client.close();
       },

@@ -1,11 +1,11 @@
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
 import { NodeSDK } from "@opentelemetry/sdk-node";
 import {
-  experimental_createMCPClient,
   ModelMessage,
   stepCountIs,
   streamText,
 } from "ai";
+import { createMCPClient } from "@ai-sdk/mcp";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
@@ -132,7 +132,7 @@ app.post("/api/mcp/chat/freeplay", async (req, res) => {
       new URL(`http://localhost:${PORT}/api/mcp/server`),
     );
 
-    const client = await experimental_createMCPClient({
+    const client = await createMCPClient({
       transport,
     });
 
@@ -187,7 +187,7 @@ app.post("/api/mcp/chat/static", async (req, res) => {
       new URL(`http://localhost:${PORT}/api/mcp/server`),
     );
 
-    const client = await experimental_createMCPClient({
+    const client = await createMCPClient({
       transport,
     });
 

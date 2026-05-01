@@ -28,6 +28,7 @@ overrides:
   '@hono/node-server': '>=1.19.14'
   protobufjs: '>=7.5.5'
   postcss: ^8.5.10
+  '@anthropic-ai/sdk': ^0.92.0
 
 importers:
 
@@ -334,8 +335,8 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
-  '@anthropic-ai/sdk@0.82.0':
-    resolution: {integrity: sha512-xdHTjL1GlUlDugHq/I47qdOKp/ROPvuHl7ROJCgUQigbvPu7asf9KcAcU1EqdrP2LuVhEKaTs7Z+ShpZDRzHdQ==}
+  '@anthropic-ai/sdk@0.92.0':
+    resolution: {integrity: sha512-l653JFC83wCglH8H83t1xpgDurCyPyslYW1maPRdCsfuNuGbLvQjQ81sWd3Go3LWRm0jNspzAhuqAYV8r9joSw==}
     hasBin: true
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
@@ -3738,7 +3739,7 @@ snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
 
-  '@anthropic-ai/sdk@0.82.0(zod@3.25.76)':
+  '@anthropic-ai/sdk@0.92.0(zod@3.25.76)':
     dependencies:
       json-schema-to-ts: 3.1.1
     optionalDependencies:
@@ -6242,7 +6243,7 @@ snapshots:
 
   freeplay@0.7.4(zod@3.25.76):
     dependencies:
-      '@anthropic-ai/sdk': 0.82.0(zod@3.25.76)
+      '@anthropic-ai/sdk': 0.92.0(zod@3.25.76)
       '@aws-sdk/client-bedrock-runtime': 3.1019.0
       axios: 1.15.0
       dotenv: 16.6.1

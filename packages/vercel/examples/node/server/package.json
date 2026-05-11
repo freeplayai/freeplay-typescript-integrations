@@ -16,7 +16,7 @@
     "@ai-sdk/openai": "^3.0.53",
     "@freeplayai/vercel": "^0.1.2",
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@opentelemetry/sdk-node": "^0.214.0",
+    "@opentelemetry/sdk-node": "^0.217.0",
     "ai": "^6.0.168",
     "cors": "^2.8.6",
     "dotenv": "^17.4.0",

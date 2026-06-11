@@ -9,17 +9,17 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^3.0.71",
-    "@ai-sdk/google": "^3.0.64",
-    "@ai-sdk/google-vertex": "^4.0.112",
-    "@ai-sdk/mcp": "^1.0.36",
-    "@ai-sdk/openai": "^3.0.53",
+    "@ai-sdk/anthropic": "^3.0.82",
+    "@ai-sdk/google": "^3.0.80",
+    "@ai-sdk/google-vertex": "^4.0.143",
+    "@ai-sdk/mcp": "^1.0.47",
+    "@ai-sdk/openai": "^3.0.69",
     "@freeplayai/vercel": "^0.1.2",
     "@modelcontextprotocol/sdk": "^1.29.0",
-    "@opentelemetry/sdk-node": "^0.217.0",
-    "ai": "^6.0.168",
+    "@opentelemetry/sdk-node": "^0.219.0",
+    "ai": "^6.0.201",
     "cors": "^2.8.6",
-    "dotenv": "^17.4.0",
+    "dotenv": "^17.4.2",
     "express": "^4.21.2",
     "freeplay": "^0.7.4",
     "zod": "^3.25.76"
@@ -28,7 +28,7 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^4.17.23",
     "@types/node": "^20.0.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.4",
     "typescript": "^5.9.3"
   }
 }
